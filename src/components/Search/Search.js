@@ -14,7 +14,6 @@ export class Search extends Component {
         for( let i = 0; i < 20; i++){
             this.employeeSearch(employeeArr);
         }
-        console.log(employeeArr)
         this.setState({search: employeeArr})
     }
 
@@ -41,8 +40,8 @@ export class Search extends Component {
     render() {
         return (
             <div>
-                <SearchInput employee={this.state.search} query={this.state.quer} handleInput={this.handleInputChange} />
-                <EmployeeCard employee={this.state.search} />
+                <SearchInput employee={this.state.search} query={this.state.query} handleInput={this.handleInputChange} />
+                <EmployeeCard employee={this.state.search} query={this.state.query} />
             </div>
         )
     }

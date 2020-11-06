@@ -12,8 +12,13 @@ function SearchInput(props) {
                 </option>)}
             </datalist>
                 <div className="input-group-append d-inline">
-                    <button className="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Filter</button>
+                    <button 
+                        className="btn btn-outline-secondary dropdown-toggle" 
+                        type="button" 
+                        data-toggle="dropdown" 
+                        aria-haspopup="true" 
+                        aria-expanded="false"
+                    >Filter</button>
                     <div className="dropdown-menu">
                         <ul>
                             <li className="dropdown-item" >Name: A-Z</li>
