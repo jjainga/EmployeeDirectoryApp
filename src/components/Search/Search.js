@@ -68,6 +68,9 @@ export class Search extends Component {
             let itState = this.state.employee.filter(itEmployee => itEmployee.department === "IT")
             this.setState({ search: itState})
             break;
+            case "Clear":
+              this.setState({ search: this.state.employee})
+              break;
           default:
   
         }
