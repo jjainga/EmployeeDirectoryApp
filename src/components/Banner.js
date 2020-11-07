@@ -2,7 +2,6 @@ import React from 'react'
 
 function Banner() {
     return (
-
         <div className="text-center">
             <div className="jumbotron">
                 <h1 className="display-4">Company XYZ</h1>
