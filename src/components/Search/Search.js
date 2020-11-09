@@ -12,17 +12,22 @@ export class Search extends Component {
         query: ""
     }
 
-    componentDidMount() {
-              API.search()
-                .then(res => {
-                  return res.data.results
-                  }).then(employee => {
-                    const departments = ["IT", "Human Resources", "Operations"]
-                    let newArr = employee.map(roleObj =>  ({...roleObj, department: departments[Math.floor(Math.random()*departments.length)]}))
-                    return newArr
-                    }).then(newArr => {
-                      this.setState({employee: newArr, search: newArr})
-                      }).catch(err => console.log(err));;
+    componentDidMount() 
+    {
+      API.search().then(res => 
+        {
+          return res.data.results
+        }).then(employee =>
+          {
+            const departments = ["IT", "Human Resources", "Operations"]
+            let newArr = employee.map(roleObj =>  ({...roleObj, department: departments[Math.floor(Math.random()*departments.length)]}))
+            return newArr
+          }).then(newArr => 
+            {
+              this.setState({employee: newArr, search: newArr})
+            }).catch(err => 
+              console.log(err)
+            );
     }
 
 
@@ -48,12 +53,12 @@ export class Search extends Component {
         console.log(value)
         switch (value){
           case "ascending":
-            let acesState = this.state.employee.sort(function(a, b){return a-b})
+            let acesState = this.state.employee.sort((a,b) => ((a.name.last > b.name.last) ? 1: -1))
             console.log(acesState)
             this.setState({ search : acesState})
             break;
           case "descending":
-            let decsState = this.state.employee.sort(function(a, b){return b-a})
+            let decsState = this.state.employee.sort((a,b) => ((a.name.last > b.name.last) ? -1: 1))
             this.setState({ search : decsState})
             break;
           case "Operations":
