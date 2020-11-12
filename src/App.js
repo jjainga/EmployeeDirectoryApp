@@ -1,6 +1,6 @@
 
 import './App.css';
-import Banner from "./components/Banner"
+import Banner from "./components/style/Banner"
 import Search from "./components/Search/Search"
 
 function App() {

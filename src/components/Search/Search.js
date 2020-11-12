@@ -50,7 +50,6 @@ export class Search extends Component {
 
       handleClick = event => {
         const value = event.target.value
-        console.log(value)
         switch (value){
           case "ascending":
             let acesState = this.state.employee.sort((a,b) => ((a.name.last > b.name.last) ? 1: -1))
